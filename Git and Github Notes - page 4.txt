@@ -1,0 +1,15 @@
+GIT AND GITHUB NOTES - 07-01-2024 - PAGE 4
+
+
+1. If you want to work on some other people's repo, then first you need to fork it to your account (like copy), so that you can now access the repo from your account. This should be done because you accot access the repo's of some other people's account.
+
+2. After you create fork of someone else's repo, then if you make any changes to your local repo and you want those changes to be merged to the original user's repo, then you need to create a pull request. Make sure you are making changes by creating a new branch for every changes.
+    git branch Veena - this is to create a branch names "Veena".
+	git checkout Veene - this is to  change the pointer(HEAD) to branch "Veena", so from now on the commits we peform will be done on "Veena" branch.
+	
+3. If a branch is created and it is commited, then a pull request has to be created to merge taht brach in main branch of original user's repo. If there is a pull request that is open and you change anything againg to tha branch and commit it, then even this change will go under same pull request. So, it is better to create a new branch for each change, if you commit a new branch, then a new pull request has to craeted for the new branch. So, follow one pull request (one commit) per branch. A new pull request can only be opened with a new branch. So, with multiple commits with no new brach, the commits will add on to the same pull request, which is difficult to inspect the changes, before merging.
+
+4. Now, if you want to sync the original(OG) repo and fork repo then:
+      1. First fetch all the changes of OG Repo : git fetch --all -prune 
+	  2. Next you need to checkout to the main branch of the fork repo.
+	  3. Next, you have to reset the fork repo's main branch to original repo's main branch, so that the both will be synced up.
