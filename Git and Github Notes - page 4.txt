@@ -15,4 +15,104 @@ GIT AND GITHUB NOTES - 07-01-2024 - PAGE 4
       3. Next, you have to reset the fork repo's main branch to original repo's main branch, so that the both will be synced up.
 	  
 
-5. If you want to merge multiple commits into a single one(Squash), then execute git rebase -i ##hascode of the comit which before the commits you want to merge.## . After this a list appears saying pick, retain the first one as pick and change the rest of the list with s(squash), now the commits with "s" will be merger with commit "pick". 	  
+5. If you want to merge multiple commits into a single one(Squash), then execute git rebase -i ##hascode of the comit which before the commits you want to merge.## . After this a list appears saying pick, retain the first one as pick and change the rest of the list with s(squash), now the commits with "s" will be merger with commit "pick". 	
+
+6. Understanding README Files
+Every repository should have a README.md file.
+Use it to explain the purpose of the project, installation steps, and usage guidelines.
+Use Markdown to format the file neatly.
+
+7. Creating .gitignore Files
+Use a .gitignore file to specify files or directories you want Git to ignore.
+Examples include temporary files, sensitive data, and OS-generated files.
+
+8. GitHub Actions
+Automate workflows like running tests, building your project, or deploying code using GitHub Actions.
+Actions are defined in .github/workflows in YAML format.
+
+9. Issues and Labels
+Use GitHub Issues to track bugs, tasks, or feature requests.
+Add labels to categorize issues and make them easier to manage.
+
+10. Milestones
+Milestones group related issues and pull requests for better tracking.
+They are useful for planning sprints or version releases.
+
+11. Pull Request Reviews
+When submitting a pull request, ask for reviews from collaborators.
+Reviews help identify bugs, improve code quality, and ensure consistency.
+
+12. Branch Naming Conventions
+Use clear and consistent branch names like feature/add-login, bugfix/fix-login-error, or release/v1.0.
+This makes it easier to understand the purpose of a branch at a glance.
+
+13. Protected Branches
+Enable branch protection rules to prevent direct commits or force pushes to critical branches (like main).
+Require status checks or reviews before merging.
+
+14. Draft Pull Requests
+Use draft pull requests for incomplete work.
+This lets collaborators know it’s not ready for review but tracks your progress.
+
+15. Markdown Files Beyond README
+Use Markdown for contributing guides (CONTRIBUTING.md), code of conduct (CODE_OF_CONDUCT.md), or documentation (docs/ folder).
+
+16. Repository Insights
+Use GitHub’s Insights tab to track repository activity, contributions, and issue metrics.
+This is useful for managing open-source projects.
+
+17. GitHub Pages
+Host static websites directly from your GitHub repository using GitHub Pages.
+Create a gh-pages branch or use the main branch for hosting.
+
+18. SSH Authentication
+Set up SSH keys for secure, password-less interaction with GitHub.
+This simplifies pushing and pulling changes, especially when working frequently.
+
+19. GitHub CLI
+Use the GitHub CLI (gh) to interact with GitHub from the terminal.
+It allows you to create issues, manage pull requests, and more.
+
+20. Contribution Guidelines
+Add a CONTRIBUTING.md file to guide others on how to contribute to your project.
+Include instructions on cloning, branch naming, coding standards, and submitting pull requests.
+
+21. Managing Collaborators
+Add collaborators to private repositories to allow others to contribute.
+Set specific permissions (read, write, or admin) for each collaborator.
+
+22. Code Owners
+Define code owners for specific files or directories using a CODEOWNERS file.
+Code owners are automatically requested for reviews when changes are made to their files.
+
+23. Release Management
+Use GitHub Releases to create versioned snapshots of your code.
+Attach release notes or binaries for easier distribution.
+
+24. Fork Synchronization
+Regularly sync your fork with the original repository to stay up-to-date.
+Use commands like git remote add upstream <original_repo_url> and git pull upstream <branch_name>.
+
+25. Starred Repositories
+Star repositories you find useful to bookmark them.
+Check your starred repositories later for inspiration or reference.
+
+26. Learning GitHub Flavored Markdown
+GitHub supports advanced Markdown features like task lists, tables, and syntax highlighting.
+Learn Markdown to improve documentation quality.
+
+27. Commit Message Best Practices
+Write concise and meaningful commit messages.
+Follow conventions like starting with a verb (e.g., "Fix login bug," "Add search feature").
+
+28. Forking vs. Cloning
+Forking creates a copy of a repository under your GitHub account for independent contributions.
+Cloning creates a local copy of a repository on your machine for direct work.
+
+29. Managing Large Files
+Use Git Large File Storage (LFS) for managing large files like videos or datasets.
+It keeps your repository size manageable.
+
+30. Keeping Your Repositories Organized
+Use GitHub Topics to tag repositories with keywords for easier discovery.
+Archive inactive repositories to reduce clutter.
