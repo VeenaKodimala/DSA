@@ -15,4 +15,4 @@ GIT AND GITHUB NOTES - 07-01-2024 - PAGE 4
       3. Next, you have to reset the fork repo's main branch to original repo's main branch, so that the both will be synced up.
 	  
 
-5. If you want to merge multiple commits into a single one(Squash), then execute git rebase -i ##hascode of the comit which before the commits you want to merge.## . After this a list appears saying pick, retain the first one as pick and change the rest of the list with s(squash), now the commits with "s" will be merger with commit "pick". 	  
+5. If you want to merge multiple commits into a single one(Squash), then execute git rebase -i ##hashcode of the commit which before the commits you want to merge.## . After this a list appears saying pick, retain the first one as pick and change the rest of the list with s(squash), now the commits with "s" will be merger with commit "pick". 	  
