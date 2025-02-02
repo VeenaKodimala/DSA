@@ -1,0 +1,7 @@
+JAVA is a complete package of JDK(Java Development KIt) -> JRE(Java Runtime Environment) -> JVM(Java Virtual Machine) - > JIT(Just In Time Compiler).
+
+So If I have craeted a .java file(my code), then below is the flow of how my .java code turns into my output expected:
+   1. JDK contains Java compiler(javac), JRE. So the first step after creting a .java file, is to compile it. This is done by executing the command "javac Sample.java" in a CMD. Here, the compiler of   JDK will compile the java code and convert it into byte code(.class file). So this byte code is platform independent(independent of OS). So, a class file generated in windows system can be runned in a linux system.
+   2. JRE actually provides an environment for running the java files. JVM, which is present inside JRE is responsible for running the byte code. If first loads the class file(Sample.class) into memory and loads necessary java libraries. And also it allocates memory for the variables inside the java code in the heap. Next it verifies if the class file is safe(without any error, if so, they are called runtime errors). It is also responsible for replacing teh actual values for the input variables, when the input(actual values) is provided. I contains stack and heap allocations.
+   3. Now, the JIT compiles blocks of byte code, converts it into machine code and caches it, for better performance. 	   
+   
