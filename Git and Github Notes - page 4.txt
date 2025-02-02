@@ -16,3 +16,6 @@ GIT AND GITHUB NOTES - 07-01-2024 - PAGE 4
 	  
 
 5. If you want to merge multiple commits into a single one(Squash), then execute git rebase -i ##hashcode of the commit which before the commits you want to merge.## . After this a list appears saying pick, retain the first one as pick and change the rest of the list with s(squash), now the commits with "s" will be merger with commit "pick". 	  
+
+
+A small correction of last command(git push origin) in "Git and Github Notes - page 3", if you want to push your changes to your remote repo, then you need to tell the system which one is your upstream branch(default branch where your local repo pushes it's changes in remote repo). So the command will be "git push -u origin master", where master is the branch name(upstream).
