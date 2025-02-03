@@ -5,3 +5,13 @@ So If I have craeted a .java file(my code), then below is the flow of how my .ja
    2. JRE actually provides an environment for running the java files. JVM, which is present inside JRE is responsible for running the byte code. If first loads the class file(Sample.class) into memory and loads necessary java libraries. And also it allocates memory for the variables inside the java code in the heap. Next it verifies if the class file is safe(without any error, if so, they are called runtime errors). It is also responsible for replacing teh actual values for the input variables, when the input(actual values) is provided. I contains stack and heap allocations.
    3. Now, the JIT compiles blocks of byte code, converts it into machine code and caches it, for better performance. 	   
    
+1. If a java file name is "Sample.java", then the file contains "Sample" public class. the only public class that shoul be present in Sample.java.
+2. Usually calss name should be starting with a capital letter.
+3. A public class can be accessed from anywhere in any class,any file and any package.
+4. public static void main(String[] args){
+} is the main method of the java where the code starts from. here public means that the JVM executes the main method first outside the class, so it has to be accesible, so that is the reason "Main" method is public. static is a way of saying that the main method is dependent on any instance of teh class but the class itself. Since, main method is the start point even b4 anything, should be instance independent, that is the reason main method is static. void because the method does not return anything. String args[] is the para,eters for the main method, so that the JVM can pass the comman-line arguments to main method. Eg: "java Sample Hello Hi Bye"(java run command). Now args array contains Hello, Hi and Bye as array input.
+5. System.ot.println, here the System class is the java's default class present in java.langh package that helps to deal with debugging , output etc.Syste.out is the dispaly of output and System.in is the input from keyboard.
+6. 
+ 
+
+   

@@ -1,0 +1,6 @@
+1. cls - to clean the command prompt.
+2. echo %PATH% - to print the path in environment variables.
+3. where - it is a command to find the files inside the path's defines in PATH variable. Ex: where java.
+    It is also used to find a file in a specific directory. here, you have to mention the directory, or else it will by default look into the path's mentioned in "PATH" variable.
+	Eg: where /r D:\ index.html - meaning, where is index.html in D drive, /r menas it will search all sub disrectories recursively.
+4. 	
