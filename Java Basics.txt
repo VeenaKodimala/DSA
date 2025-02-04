@@ -11,7 +11,23 @@ So If I have craeted a .java file(my code), then below is the flow of how my .ja
 4. public static void main(String[] args){
 } is the main method of the java where the code starts from. here public means that the JVM executes the main method first outside the class, so it has to be accesible, so that is the reason "Main" method is public. static is a way of saying that the main method is dependent on any instance of teh class but the class itself. Since, main method is the start point even b4 anything, should be instance independent, that is the reason main method is static. void because the method does not return anything. String args[] is the para,eters for the main method, so that the JVM can pass the comman-line arguments to main method. Eg: "java Sample Hello Hi Bye"(java run command). Now args array contains Hello, Hi and Bye as array input.
 5. System.ot.println, here the System class is the java's default class present in java.langh package that helps to deal with debugging , output etc.Syste.out is the dispaly of output and System.in is the input from keyboard.
-6. 
+6. Scanner calss helps to get the user defined output from the console. Eg:
+Scanner sc = new Scanner(System.in);
+int a = sc.nextInt();
+
+Here if the input is string then String b = sc.next(). But we have to observe that, if in console if i type Hey How are you, then b contains only Hey, because it considers only sing string until the space. If we want the entire line then we have to go for String a = sc.netLine()
+7. Datatypes in java: Primitive and Non-primitive.
+8. Primitive: They are simple datatypes where it cannot be divided or break further.Eg: nuber 4 or character a etc. Integer(4 bytes), Character,float(4 bytes),double(8 bytes),long(8 bytes),boolean.
+int a =10;
+float f = 1.1f;
+char a = "k";
+double d = 4567.09998
+long l = 1098787987987L;
+boolean b = false;
+
+Ok, nowhy do we add f and L at the end of floaat and long? actually the equivalent datatypes of long and float are int and double. The difference is Long accepts larger number(in terms of size 8 bytes) and float has leseer precision. So,
+Eg1: float 1.1; -> for java, this 1.1 is by default double. So if we compile this, it will throw a compilation error saying lousy conversion. so we need to tell java explicitly that 1.1 is a float despite of declaring it as a float, as 'f'. Eg2: long b = 0989789789787; For java 0989789789787 is int by default so when we compile it it throws an error saying too large number since integer can only store 4 bytes. so we need to tell java explicitly that 0989789789787 is a long despite of declaring it as a long, as 'L'
+9. Non-Primitive: 
  
 
    
