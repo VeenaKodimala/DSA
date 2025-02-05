@@ -26,7 +26,25 @@ long l = 1098787987987L;
 boolean b = false;
 
 Ok, nowhy do we add f and L at the end of floaat and long? actually the equivalent datatypes of long and float are int and double. The difference is Long accepts larger number(in terms of size 8 bytes) and float has leseer precision. So,
-Eg1: float 1.1; -> for java, this 1.1 is by default double. So if we compile this, it will throw a compilation error saying lousy conversion. so we need to tell java explicitly that 1.1 is a float despite of declaring it as a float, as 'f'. Eg2: long b = 0989789789787; For java 0989789789787 is int by default so when we compile it it throws an error saying too large number since integer can only store 4 bytes. so we need to tell java explicitly that 0989789789787 is a long despite of declaring it as a long, as 'L'
+Eg1: float 1.1; -> for java, this 1.1 is by default double. So if we compile this, it will throw a compilation error saying lousy conversion. so we need to tell java explicitly that 1.1 is a float despite of declaring it as a float, as 'f'. Eg2: long b = 0989789789787; For java 0989789789787 is int by default so when we compile it it throws an error saying too large number since integer can only store 4 bytes. so we need to tell java explicitly that 0989789789787 is a long despite of declaring it as a long, as 'L'.
+
+8. Automatic Type casting in java without being done explicitly will work under certain conditions. Eg: Assigning an integer to a float. float a = 4; This will work because float and integer are compatabile and also, we are assigning a comparitively small datatype(int) to float, but this will not work the other way around. If we want t o assign a float to integer the we need to do type casting explicitly. Eg: int a = (int) 45.2;
+
+Eg1:
+int a=345;
+byte b = (byte) a;
+
+Now b will store 89. why? - a byte can store atmost 256 bits so the value that is greater than 256 will be divided by 256 and the remainder will be stored in a byte variable, if a larger number is assigned. This only happen if the type casting is done. In normal, you cannot do byte b = 456; this will give type mismatch error, since 456 is considered as int.
+
+Eg2:
+byte a = 9;
+byte c=5;
+byte c=a*b; -> this will throw type mismatch error.
+Why? - This is because when complex function are involved(+,-,*,/) between two bytes, the the result will be casted automatically to int. So the result cannot be stored in a byte variable.
+
+9. Java works on UNICODE values, meaning it supports all the languages.
+10. In java, when two different data types are packed with an operator, the the result of the operation will in the dtatype that superior of the both datatypes. Eg: int,float = float. int,long=long. Thease are known as type promotion rules of java.
+
 9. Non-Primitive: 
  
 
