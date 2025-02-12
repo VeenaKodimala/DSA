@@ -19,3 +19,11 @@ GIT AND GITHUB NOTES - 07-01-2024 - PAGE 4
 
 
 A small correction of last command(git push origin) in "Git and Github Notes - page 3", if you want to push your changes to your remote repo, then you need to tell the system which one is your upstream branch(default branch where your local repo pushes it's changes in remote repo). So the command will be "git push -u origin master", where master is the branch name(upstream).
+
+HOW TO CREATE AND LINK SSH KEY TO GITHUB:
+1. Open Git bash and check if you already have any ssh keys: ls ~/.ssh/id_rsa.pub - this is the location(C:\Users\saive\.ssh), where the ssh keys will be if present. If this returns error, then there are no SSH keys found.
+2. If no SSH keys are found then we need to create one, so that we can clone any repo's from github using SSH: ssh-keygen -t rsa -b 4096 -C "saiveenakodimala@yahoo.com", wher ethe command expains, generate ssh key(ssh-keygen) of type rsa(Rivest Shamir Adleman, -t rsa), of bit length 4096(higher the better, -b 4096), with a comment(-C "saiveenakodimala@yahoo", for future reference).
+3. Next we have to start the ssh agent, to add the ssh key - eval "$(ssh-agent -s)"
+4. Further, add the private key to ssh agent: ssh-add ~/.ssh/id_rsa(make sure you are not adding public key: ssh-add ~/.ssh/id_rsa.pub). After adding the ssh key, we have to add the key to github, copy your public key and paste it in New SSH key craeted in github -> click user profile -> setting -> ssh and gpg keys -> add new ssh key. 
+5. Test your added ssh key in git bash: ssh -T git@github.com
+7. 

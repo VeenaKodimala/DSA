@@ -45,6 +45,8 @@ Why? - This is because when complex function are involved(+,-,*,/) between two b
 9. Java works on UNICODE values, meaning it supports all the languages.
 10. In java, when two different data types are packed with an operator, the the result of the operation will in the dtatype that superior of the both datatypes. Eg: int,float = float. int,long=long. Thease are known as type promotion rules of java.
 
+10. There is no pass by reference in java, there is only pass by value. In functions, we pass parameters, by this we will be passing the copy of value present in heap memory, of the refence variable. so when the value is received in the function by the arguments, they point to the same object(value) present in heap. If the value of the argument is changed in the function, then the reference variable(parameter) will point to the new value. So, this will not change the original value(parameter values).  The above mentionesd is  applicable only to primitive datatypes(int,float,long,double,short,byte) and Non-primitive Datatype-String alone. They are immutable. When dealing with arrays, they are mutable so when a value is changed, then it will affect the original value, even inside a function to which the array has been passes ad argument.
+
 9. Non-Primitive: 
  
 
