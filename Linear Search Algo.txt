@@ -1,0 +1,3 @@
+1. The linear search is is a way of finding an element in an array, buy comparing it wi\th each element of the array, until the match is found. The array can be sorted or unsorted.
+2. The time complexity for best case scenario(the element found at the frst index) is O(1) -> constant time complexity. In here, the time complexity graph will be constant at one ms.
+3. The time complexity for worst case scenario(the element not found at all) is O(n) -> where n is the size of the input array,linear time complexity. In here, the time complexity graph will be linear, meaning the time increases as the array size increases.

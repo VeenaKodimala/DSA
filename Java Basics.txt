@@ -47,7 +47,110 @@ Why? - This is because when complex function are involved(+,-,*,/) between two b
 
 10. There is no pass by reference in java, there is only pass by value. In functions, we pass parameters, by this we will be passing the copy of value present in heap memory, of the refence variable. so when the value is received in the function by the arguments, they point to the same object(value) present in heap. If the value of the argument is changed in the function, then the reference variable(parameter) will point to the new value. So, this will not change the original value(parameter values).  The above mentionesd is  applicable only to primitive datatypes(int,float,long,double,short,byte) and Non-primitive Datatype-String alone. They are immutable. When dealing with arrays, they are mutable so when a value is changed, then it will affect the original value, even inside a function to which the array has been passes ad argument.
 
-9. Non-Primitive: 
- 
+9. We cannot use object dependent entities(non static variable) inside a object independent blocks(static metods etc.)
+
+11. Shodowing:: This is a concept, where when a child class has the same variable that has been declared in Parent clss(inherited by child), then the variable in child will override the parent's variable. This happens if a variable is declared globally in a class and there is method inside the class with the same variable name as the global variable, then inside the method, the variable inside the method will shaodow the global variable. But, this is not similar to polymorphism(method overriding) since polymorphism applies to methods and shadowing applies to variables.
+
+EXAMPLE::	 
+class Parent {
+    int x = 10;
+}
+
+class Child extends Parent {
+    int x = 20; // Shadows Parent's x
+}
+
+public class Main {
+    public static void main(String[] args) {
+        Parent obj1 = new Parent();
+        System.out.println(obj1.x); // Prints 10 (Parent's x) -> Shadowing happens, child's x is completely shadowed by parent x.
+
+        Child obj2 = new Child();
+        System.out.println(obj2.x); // Prints 20 (Child's x) 
+
+        Parent obj3 = new Child(); // Upcasting
+        System.out.println(obj3.x); // Prints 10 (Parent's x) 
+		
+		Child obj4 = (Child)obj3; // Downcasting 
+        System.out.println(obj4.x); // Prints 20 (Child's x)  -> Shadowing happens, parent's x is completely shadowed by child x
+    }
+}
+
+
+
+
+10. Parent obj = new Child();
+In the above stmt, "Parent" is the reference type and "Child" is the object type that is actually stored in memory. Reference type will decide membors(variables/methods) that can be accessed at comiple time. Object type will deciede whose method to be overriden at runtime. This is known as upcasting i.e, assigning child object to parent's refrence. left side of == is refrence and right side of = is ojeco.
+
+EXAMPLE::::
+
+class Parent {
+    int x = 10;
+
+    void show() {
+        System.out.println("Parent show()");
+    }
+}
+
+class Child extends Parent {
+    int x = 20; // Shadowing Parent's x
+
+    @Override
+    void show() {
+        System.out.println("Child show()");
+    }
+
+    void childOnlyMethod() {
+        System.out.println("Child-specific method");
+    }
+}
+
+public class Main {
+    public static void main(String[] args) {
+        Parent obj = new Child(); // Reference Type: Parent, Object Type: Child
+
+        System.out.println(obj.x); // Prints 10 (Reference Type determines variable access, here child's x is shadowed by parent's x.)
+        obj.show(); // Prints "Child show()" (Object Type determines overridden method execution)
+
+        // obj.childOnlyMethod(); // ❌ ERROR: Cannot access child-specific method using Parent reference
+
+        // Downcasting to access Child-specific members
+        Child childObj = (Child) obj;
+        childObj.childOnlyMethod(); // ✅ Works now
+    }
+}
+
+In the above method, during compile time, since the Reference type of object(obj) is Parent, Parent's x and show method is accesible and there was no compilation error, if line "obj.childOnlyMethod();" was uncommented, then it is an error, since the reference type is of Parent, Child's methods are not accesible. In Runtime, since the object type is Child, the show method of parent id overriden by child's method. 
+
+Late Binding::: Also known as dynamic method dispatch or runtime polymorphism, is decising which method to run at runtime based on object type rather than reference type. It is applicable only for methods and not variables.
+
+Variable access is decieded by reference type and method's loading is decieded by object type.
+
+Difference between Shadowing and polymorphism:::
+
+   a. Shadowing affects variable while polymorphism affects methods.
+   b. Shadowing is Resolved at compile-time while polymorphism is resolved at runtime.
+   c. Shadowing depends on reference type while polymorphism depends on object type.
+   d. Shadowing does not works with upcasting because, at compile time for Parent obj = new Child() ==> this is upcasting, here, the rference type is Parent so parent's variables are only accessed. Since late-binding is not available for variables, only the paren's variables and methods are accessed via obj. So, shadowing is not supported. But, polymorphism works with upcasting, because in this Parent obj = new Chld(), at runtime, due to late-binding, child's method will be eexecuted since it is dependent only onbjec type and not reference type.
+
+Method Overloading: In a class file, if two or more functions have same name, but different types of arguments or different no.of arguments, then in compile time, the compiler will decide which method to run based on the arguments.
+
+Variable length arguments(varargs): For a method, if we do not know how many arguments you want to pass as arguments, then we can do like Summ(int ...v). Here "v" will have an array of integers. Referece code(JavaBasics) for example. When we are trying to pass varargs and string , int, alltogether, then the varargs should always be at the end. Vraargs will also work if the function call sends 0 params. In method overloasding, if there two function with same name and int varargs and string varargs respectively(fun(String ...v) and fun(int ...x)), then if we call fun(), it will show an error, due to ambiguity. because, the both functions are applicable if the params are empty.so, the compiler will not be able to decide. 		
+
+Declaration of variables will happen at runtime and the object creation memory heap happens in runtime(Dynamic memory allocation).
+
+In java, the array elements getting stored continuosly in heap memory depends on the JVM.Since the array objects are stored in heap, In JLS(Java Language Specification), they mentioned the heap objects are not continuous.
+
+"new" keyword in instance creation is used to create a new object oin the heap memory. Eg int[] a = new int[5], the new keyword indicated to create an array apace of 5 in heap. The default values of this array is [0,0,0,0,0]. For string it will be "null".
+
+Primitives are stored in the stack memory and objects and primitive dtataypes are stored in heap memory.
+
+
+
+
+
+
+   
+
 
    
